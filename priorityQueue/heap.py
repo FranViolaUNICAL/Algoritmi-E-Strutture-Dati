@@ -128,7 +128,7 @@ def deleteMin(H):
         return None
     if n == 1:
         setSize(H,0)
-        deleteLeafNode(H)
+        deleteLeafNode(A)
         return min
     s = int2string(n)
     p = tree(H)
@@ -138,7 +138,7 @@ def deleteMin(H):
         else:
             p = right(p)
         s.pop()
-    s = key(p)
+    x = key(p)
     deleteLeafNode(p)
     setSize(H,size(H) - 1)
     setKey(A,x)

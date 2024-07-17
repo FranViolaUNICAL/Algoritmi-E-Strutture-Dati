@@ -106,3 +106,5 @@ def breadthfirst(Q,B):
         if not empty(right(A)):
             Q.append(right(A))
         Q.pop(0)
+
+

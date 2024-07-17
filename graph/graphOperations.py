@@ -10,7 +10,7 @@ def edges(pred):
 def breadthVisit(G,s):
     Queue = [s]
     Visited = []
-    while Queue != []
+    while Queue != []:
         next = Queue.pop(0)
         if not next in Visited:
             Visited.append(next)
