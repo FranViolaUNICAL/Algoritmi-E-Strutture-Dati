@@ -60,7 +60,6 @@ def info(A):
 def creaAlbero():
     return []
 
-
 def almenoK(G,x,k,d):
     i = 0
     for n in g.nodes(G):
