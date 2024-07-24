@@ -53,3 +53,12 @@ def neighbors(G,x):
         L.append(y)
     return L
 
+def edges(G):
+    ret = []
+    for n in nodes(G):
+        for y in neighbors(G,n):
+            if (n,y) not in ret:
+                ret.append((n,y))
+            if (y,n) not in ret:
+                ret.append((y,n))
+    return ret
