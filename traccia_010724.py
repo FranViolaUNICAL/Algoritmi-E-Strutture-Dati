@@ -27,18 +27,8 @@ def main():
 def vertexCover(G):
     if g.size(G) == 0:
         return []
-    possibleCovers = []
+    possibleCovers = findAllPossibleCovers(G)
     actualCovers = []
-    nodes = g.nodes(G)
-    while nodes:
-        x = nodes.pop(0)
-        s = set([x])
-        if s not in possibleCovers:
-            possibleCovers.append(deepCopy(s))
-        for y in nodes:
-            s.add(y)
-            if s not in possibleCovers:
-                possibleCovers.append(deepCopy(s))
     for s in possibleCovers:
         if isVertexCover(G,s):
             actualCovers.append(s)
@@ -62,7 +52,19 @@ def isVertexCover(G,s):
                 check.append(x)
     return len(nodes) == len(check)
 
-
+def findAllPossibleCovers(G):
+    ret = []
+    nodes = g.nodes(G)
+    while nodes:
+        x = nodes.pop(0)
+        s = {x}
+        if s not in ret:
+            ret.append(deepCopy(s))
+        for y in nodes:
+            s.add(y)
+            if s not in ret:
+                ret.append(deepCopy(s))
+    return ret
 
 
 def main2():
