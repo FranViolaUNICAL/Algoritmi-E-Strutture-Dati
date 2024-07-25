@@ -66,5 +66,3 @@ target = 8
 result = []
 backtrackingSum(numbers, target, [], result)
 print(result)
-
-def coloredTiles(matrix, )
